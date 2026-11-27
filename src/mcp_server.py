@@ -14,7 +14,7 @@ docs_dir=Path(__file__).absolute().parent.parent / "data" / "knowledge"
 _VS=None
 
 def get_retriever():
-    """首次调用时才加载 embedding 模型并建索引，加载失败不影响其他工具。"""
+    """懒加载"""
     global _VS
     if _VS is None:
         from rag import VectorRetriever
