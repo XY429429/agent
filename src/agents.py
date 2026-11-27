@@ -334,8 +334,3 @@ def make_route_review(require_approval: bool):
         return "plan"
 
     return route
-
-
-def route_review(state: ProjectState) -> str:
-    """兼容旧调用：不带人工审批的路由"""
-    return make_route_review(False)(state)
